@@ -34,51 +34,41 @@ from telegram import Update
 from telegram.ext import Updater,CommandHandler,MessageHandler,Filters,CallbackContext,CallbackQueryHandler
 #nltk.download('punkt')
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 
 with open('intents.json', 'r') as f:
     intents = json.load(f)
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 FILE = "databot.pth"
-
 data = torch.load(FILE)
-
 input_size = data["input_size"]
 hidden_size = data["hidden_size"]
 output_size = data["output_size"]
 palabras_totales = data["palabras_totales"]
 tags = data["tags"]
 model_state = data["model_state"]
-
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
-
 bot_name = "Seiken"
-
 respuestas = ["Me alegro", "Genial crack", "Vale bro", "Chevere crack, algo más?"]
-
 mensaje_motivacion=" "
 mensaje_alimentacion=" "
 contador_pasos=0
-
 logging.basicConfig(level=logging.INFO, format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s,")
 logger = logging.getLogger()
+TOKEN = os.getenv("BOT TOKEN")
 
-TOKEN = os.getenv("YOUR BOT TOKEN")
 
 def start(update: Update, context: CallbackContext):
     tipo=update.effective_chat['type']
-
     if tipo == "supergroup":
-        pass
-
+        pass ##solo responde a mensajes en privado
     name = update.effective_user['first_name']
     update.message.reply_text(f"Hola {name} 👋  Soy SEIKEN, un guerrero como tu 💪🏻🔥 Estoy aquí para ayudarte.")
     update.message.reply_text(main_menu_message(),
                         reply_markup=main_menu_keyboard())
-
-
 
 def echo(update: Update, context: CallbackContext):
     tipo=update.effective_chat['type']
