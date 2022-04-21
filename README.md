@@ -13,6 +13,6 @@ Libraries used:
 ### Functionalities
 - Answers basic fitness-related questions
 - Displays a menu where users can download fitness content  
-- Sends scheduled messages (defined in a Google Spreadsheet) to defined telegram group/channel
+- Sends scheduled messages (defined in a Google Spreadsheet) to telegram group/channel
 
 
