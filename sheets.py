@@ -9,12 +9,6 @@ sheet = client.open("RetoSeiken2022_Mensajes_Telegram").sheet1
 
 #### - BIBLIOTECA DE MENSAJES - ####
 
-mensajes__motivacion_mañana = sheet.col_values(1) 
+motivation = sheet.col_values(1) 
 
-tips_alimentacion = sheet.col_values(2) 
-
-trigger_mañana = sheet.col_values(3)
-
-trigger_tarde = sheet.col_values(4)
-
-trigger_noche = sheet.col_values(5)
+nutrition = sheet.col_values(2)

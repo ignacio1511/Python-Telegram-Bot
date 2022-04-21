@@ -1,10 +1,7 @@
 import json
 from re import X
-<<<<<<< HEAD
 from functions import tokenize,stem,bag_of_words
-=======
 from functions import tokenize,stem,bag_of_words
->>>>>>> file split
 import numpy as np
 import torch
 import torch.nn as nn
