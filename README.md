@@ -1,7 +1,11 @@
 # SeikenChatBotTelegram
-Chatbot implemented in Telegram. Libraries NLTK and Torch, applying a feed forward neural network
 
-## Hola
-# Python-Telegram-Bot
-# Python-Telegram-Bot
-# Python-Telegram-Bot
+## Documentation
+
+This Chatbot was made for the purpose of increasing the interaction and engagement of a fitness Telegram community.
+
+This Chatbot was made using the following libraries:
+- NLTK 	for language processing
+- Pytorch 	for predictive models 
+- Python-telegram-bot 		for Telegram API connection
+
