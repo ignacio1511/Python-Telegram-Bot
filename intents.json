@@ -1,0 +1,129 @@
+{
+    "intents": [
+      {
+        "tag": "saludo",
+        "patterns": [
+          "Hola",
+          "Hla",
+          "Como estas?",
+          "Buenos dias",
+          "Buen dia",
+          "Hey",
+          "Que tal"
+        ],
+        "responses": [
+          "Hola crack",
+          "SUUUUUUUUUUUUUUU",
+          "Hey bro, hay algo en lo que te pueda ayudar?",
+          "Que tal bro, como va todo?"
+        ]
+      },
+      {
+        "tag": "saludo-respuesta-positiva",
+        "patterns": ["Bien", "todo bien", "estoy bien", "muy bien", "todo genial"],
+        "responses": [
+          "Me alegro hermano",
+          "Esta genial bro, yo tambien estoy muy bien",
+          "Increible hermano, esa es la actitud"
+        ]
+      },
+      {
+        "tag": "despedida",
+        "patterns": ["Chau", "Nos vemos", "Adios", "Hablamos"],
+        "responses": [
+          "Hasta luego bro, que tengas un gran dia",
+          "Nos vemos crack, un gusto hablar contigo",
+          "Chau bro, espero podamos conversar pronto"
+        ]
+      },
+      {
+        "tag": "gracias",
+        "patterns": ["gracias", "muchas gracias", "eso me ayuda", "gracias por tu ayuda"],
+        "responses": ["Estoy aqui para ayudarte bro", "Cuando gustes hermano", "De nada bro, para eso estoy"]
+      },
+      {
+        "tag": "abs",
+        "patterns": [
+          "Como hago para tener abs?",
+          "Quiero marcar abdominales",
+          "Quiero marcar abs",
+          "Que hago para sacar cuadraditos",
+          "Quiero marcar mi abdomen",
+          "Quiero tener abs"
+        ],
+        "responses": [
+          "Simple, para marcar tus abdominales debes llegar aproximadamente a un 10% de grasa si eres hombre y un 18% si eres mujer, para esto debes tener una alimentacion saludable y hacer ejercicio al menos 3 veces por semana "
+        ]
+      },
+      {
+        "tag": "bajar_de_peso",
+        "patterns": [
+          "Quiero bajar de peso",
+          "Como hago para bajar de peso?",
+          "Tengo sobrepeso",
+          "Ayudame a bajar de peso",
+          "Tengo mucha grasa acumulada",
+          "Estoy gordo"
+        ],
+        "responses": [
+          "Para bajar de peso, debes estar en un deficit de calorias, es decir, consmuir menos calorias de las que tu cuerpo quema en un dia" 
+        ]
+      },
+      {
+        "tag": "ganar_musculo",
+        "patterns": [
+          "Como hago para ganar musculo",
+          "Soy muy flaco",
+          "Quiero aumentar masa muscular",
+          "Ayudame a aumentar musculo"
+
+        ],
+        "responses": [
+          "Para aumentar musculo, debes estar en un excedente de calorias, es decir, consmuir mas calorias de las que tu cuerpo quema en un dia, siempre priorizando la proteina" 
+        ]
+      },
+      {
+        "tag": "entrenamiento",
+        "patterns": [
+          "No estoy entrenando bien",
+          "Me duele cuando entreno",
+          "Quiero entrenar mejor"
+        ],
+        "responses": [
+          "Para tener un buen entrenamiento asegurate que estas usando un peso que te exiga, pero que no sea muy excesivo, lo mas importante es concentrarte en la tecnica y llevarte al limite"
+        ]
+      },
+      {
+        "tag": "alimentacion",
+        "patterns": [
+          "No se que comer",
+          "Quiero comer mejor",
+          "Quiero tener una alimentacion saludable",
+          "Como hago para ser saludable"
+        ],
+        "responses": [
+          "Para tener una buena alimentacion asegurate de evitar los alimentos procesados, come comidas de un solo ingrediente como el pollo, la papa, el camote, etc y prioriza simepre la proteina y toma 2-3 litros de agua diarios"
+        ]
+      },
+
+      {
+        "tag": "motivacion",
+        "patterns": [
+          "Estoy desanimado",
+          "No tengo ganas de entrenar",
+          "No tengo motivacion",
+          "Estoy mal",
+          "Me siento mal",
+          "mal",
+          "Estoy triste"
+        ],
+        "responses": [
+          "No te preocupes bro, todos nos sentimos asi de vez en cuando, recuerda que si quieres salir adelante, debes comenzar",
+          "Si bro, todos tenemos momentos asi, recuerda que la persona que serás en un futuro está determinada por lo que hagas hoy"
+
+        ]
+      }
+      
+    ]
+  }
+  
