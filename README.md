@@ -11,6 +11,6 @@ This Chatbot was made to increase the interaction and engagement of a fitness Te
 
 This Chatbot was made using the following libraries:
 - NLTK 	for language processing
-- Pytorch 	for predictive models 
+- Pytorch 	for machine learning 
 - Python-telegram-bot 		for Telegram API connection
 - gspread	for Goolge Sheets API connection
