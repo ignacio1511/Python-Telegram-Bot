@@ -9,6 +9,7 @@ from sheets import motivation,nutrition
 telegramUrl = 'http://api.telegram.org/bot'
 bot_token = '5126043917:AAH1AlfvaOhFJuf2nBdEI8FhuUa79nc1Z18'
 telegramAPI = telegramUrl + bot_token
+stemmer = SnowballStemmer('spanish')
 
 
 def normalize(s):
@@ -23,17 +24,11 @@ def normalize(s):
         s = s.replace(a, b).replace(a.upper(), b.upper())
     return s
 
-
-stemmer = SnowballStemmer('spanish')
-
-
 def tokenize(frase):
     return nltk.word_tokenize(frase)
 
-
 def stem(palabra):
     return normalize(stemmer.stem(palabra.lower()))
-
 
 def bag_of_words(tokenized_sentence, words):
     sentence_words = [stem(word) for word in tokenized_sentence]
@@ -44,16 +39,14 @@ def bag_of_words(tokenized_sentence, words):
 
     return bag
 
-
 def sendText(chat_id,mensaje):
     base_url =  telegramAPI +'/sendMessage?chat_id=' + chat_id + '&text="{}"'.format(mensaje)
     return requests.get(base_url)
 
-  
 def scheduleMotivation():
     mensaje = random.choice(motivation)
-    sendText('394714808',mensaje)
+    sendText('ID',mensaje)
 
 def scheduleNutrition():
     mensaje = random.choice(nutrition)
-    sendText('394714808',mensaje)
+    sendText('ID',mensaje)

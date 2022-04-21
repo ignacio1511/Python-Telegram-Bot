@@ -65,7 +65,7 @@ contador_pasos=0
 logging.basicConfig(level=logging.INFO, format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s,")
 logger = logging.getLogger()
 
-TOKEN = os.getenv("5126043917:AAH1AlfvaOhFJuf2nBdEI8FhuUa79nc1Z18")
+TOKEN = os.getenv("YOUR BOT TOKEN")
 
 def start(update: Update, context: CallbackContext):
     tipo=update.effective_chat['type']
@@ -120,19 +120,12 @@ def echo(update: Update, context: CallbackContext):
             )
 
 
+if __name__== "__main__":
+    my_bot = telegram.Bot(token="BOT TOKEN")
+
+
 scheduler_motivation = BackgroundScheduler()
 scheduler_nutrition = BackgroundScheduler()
-
-### MAIN ### 
-
-if __name__== "__main__":
-    my_bot = telegram.Bot(token="5126043917:AAH1AlfvaOhFJuf2nBdEI8FhuUa79nc1Z18")
-    print("MY BOT GET ME ... " + str(my_bot.getMe()))
-    print("MY BOT ... " + str(my_bot))
-    sendText('394714808',random.choice(motivation))
-    scheduleNutrition()
-    scheduleMotivation()
-
 updater=Updater(my_bot.token, use_context=True)
 
 #Creando un despachador
@@ -145,7 +138,7 @@ updater.dispatcher.add_error_handler(error)
 
 scheduler_nutrition.add_job(scheduleNutrition,'interval', hours=24, start_date='2022-04-21 05:58:00', end_date='2022-05-26 06:05:00')
 scheduler_nutrition.add_executor
-scheduler_motivation.add_job(scheduleNutrition,'interval', hours=24, start_date='2022-04-21 05:58:00', end_date='2022-05-26 06:05:00')
+scheduler_motivation.add_job(scheduleMotivation,'interval', hours=24, start_date='2022-04-21 05:58:00', end_date='2022-05-26 06:05:00')
 scheduler_motivation.add_executor
 
 #### MENUS #####
