@@ -35,10 +35,11 @@ from telegram.ext import Updater,CommandHandler,MessageHandler,Filters,CallbackC
 #nltk.download('punkt')
 
 
-
+## Respuestas y patrones
 with open('intents.json', 'r') as f:
     intents = json.load(f)
 
+## Model
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 FILE = "databot.pth"
 data = torch.load(FILE)
@@ -51,6 +52,8 @@ model_state = data["model_state"]
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
+
+## Bot Y Mensajes
 bot_name = "Seiken"
 respuestas = ["Me alegro", "Genial crack", "Vale bro", "Chevere crack, algo más?"]
 mensaje_motivacion=" "
@@ -60,7 +63,7 @@ logging.basicConfig(level=logging.INFO, format = "%(asctime)s - %(name)s - %(lev
 logger = logging.getLogger()
 TOKEN = os.getenv("BOT TOKEN")
 
-
+## Inicializar bot (/start)
 def start(update: Update, context: CallbackContext):
     tipo=update.effective_chat['type']
     if tipo == "supergroup":
@@ -70,6 +73,7 @@ def start(update: Update, context: CallbackContext):
     update.message.reply_text(main_menu_message(),
                         reply_markup=main_menu_keyboard())
 
+## Conversaciones
 def echo(update: Update, context: CallbackContext):
     tipo=update.effective_chat['type']
     print("UPDATE ..." + str(update))
@@ -114,18 +118,15 @@ if __name__== "__main__":
     my_bot = telegram.Bot(token="BOT TOKEN")
 
 
+
+### DISPATCHERS Y SCHEDULERS ####
 scheduler_motivation = BackgroundScheduler()
 scheduler_nutrition = BackgroundScheduler()
 updater=Updater(my_bot.token, use_context=True)
-
-#Creando un despachador
 dp=updater.dispatcher
-
-#Creando los manejadores
 dp.add_handler(CommandHandler("start",start))
 dp.add_handler(MessageHandler(Filters.text, echo))
 updater.dispatcher.add_error_handler(error)
-
 scheduler_nutrition.add_job(scheduleNutrition,'interval', hours=24, start_date='2022-04-21 05:58:00', end_date='2022-05-26 06:05:00')
 scheduler_nutrition.add_executor
 scheduler_motivation.add_job(scheduleMotivation,'interval', hours=24, start_date='2022-04-21 05:58:00', end_date='2022-05-26 06:05:00')
