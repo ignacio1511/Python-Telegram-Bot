@@ -11,7 +11,7 @@ Libraries used:
 - gspread	for Goolge Sheets API connection
 
 ### Functionalities
-- Predicts answers basic fitness-related questions
+- Predicts answers for basic fitness-related questions
 - Displays a menu where users can download fitness content  
 - Sends scheduled messages (defined in a Google Spreadsheet) to telegram group/channel
 
