@@ -7,7 +7,7 @@ import random
 from sheets import motivation,nutrition
 
 telegramUrl = 'http://api.telegram.org/bot'
-bot_token = '5126043917:AAH1AlfvaOhFJuf2nBdEI8FhuUa79nc1Z18'
+bot_token = '##################'
 telegramAPI = telegramUrl + bot_token
 stemmer = SnowballStemmer('spanish')
 
